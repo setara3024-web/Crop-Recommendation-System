@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crop Recommendation System</title>
+  <link rel="icon" href="image/—Pngtree—rice plant against white_19946199.png">
+  <link rel="stylesheet" href="style.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>🌾Crop Recommendation</h1>
+    <form id="cropForm">
+      <label for="n">Nitrogen (N)</label>
+      <input type="number" id="n" required>
+
+      <label for="p">Phosphorus (P)</label>
+      <input type="number" id="p" required>
+
+      <label for="k">Potassium (K)</label>
+      <input type="number" id="k" required>
+
+      <label for="ph">Soil pH</label>
+      <input type="number" step="0.1" id="ph" required>
+
+      <label for="temp">Temperature (°C)</label>
+      <input type="number" step="0.1" id="temp" required>
+
+      <label for="rain">Rainfall (mm/year)</label>
+      <input type="number" id="rain" required>
+
+      <label for="hum">Humidity (%)</label>
+      <input type="number" id="hum" required>
+
+      <button type="submit">Recommend Crops</button>
+    </form>
+
+    <div class="result" id="resultCard">
+      <h2>Top Crop Recommendations</h2>
+      <div id="recommendations"></div>
+      <canvas id="cropChart" height="100"></canvas>
+      <button id="downloadBtn">📥 Download PDF Report</button>
+    </div>
+  </div>
+
+  <!-- Hidden PDF template -->
+  <div id="pdfReport">
+    <h2>🌾 Crop Recommendation Report</h2>
+    <p><b>Generated on:</b> <span id="pdfDate"></span></p>
+
+    <h3>🔹 Input Values</h3>
+    <div id="pdfInputs"></div>
+
+    <h3>🔹 Recommendations</h3>
+    <div id="pdfRecs"></div>
+
+    <h3>🔹 Suitability Chart</h3>
+    <div id="pdfChartDiv"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
